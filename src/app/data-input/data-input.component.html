@@ -1,0 +1,37 @@
+<div class="data-input__container">
+    <div class="data-input__wrapper">
+        <label for="chapterUrl">Chapter url:</label>
+        <input type="text" name="chapterUrl" [(ngModel)]="jsonInputData.chapterUrl" (keyup)="updateOutput()">
+    </div>
+
+    <div class="data-input__wrapper">
+        <label for="chapterUuid">Chapter uuid:</label>
+        <input type="text" name="chapterUuid" [(ngModel)]="jsonInputData.chapterUuid" (keyup)="updateOutput()">
+    </div>
+
+    <div class="data-input__wrapper">
+        <label for="themeCode">Theme code:</label>
+        <input type="text" name="themeCode" [(ngModel)]="jsonInputData.themeCode" (keyup)="updateOutput()">
+    </div>
+
+    <div>
+        <label for="isChapter">Is chapter?</label>
+        <input type="checkbox" name="isChapter" checked [(ngModel)]="jsonInputData.isChapter" (change)="updateOutput()">
+    </div>
+
+    <div>
+        <label for="color">Kleur qr code</label>
+        <input id="color" name="color" [(colorPicker)]="color" [style.background]="color" [value]="color" />
+    </div>
+
+</div>
+
+<div class="data-output__container">
+    <pre class="prettyprint">
+        <code class="language-javascript">
+            {{ jsonOutputData }}
+        </code>
+    </pre>
+</div>
+
+<app-data-output [jsonOutputData]="jsonOutputData" [color]="color"></app-data-output>
