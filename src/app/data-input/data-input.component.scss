@@ -1,0 +1,19 @@
+.data-input__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    height: 40%;
+}
+
+.data__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    height: 60%;
+}
+
+#color {
+    cursor: pointer;
+}
