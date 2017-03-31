@@ -18,6 +18,7 @@ export class DataOutputComponent implements OnInit {
     jsonRaw: any;
     jsonResult: string;
     generatedCode = false;
+    generatedLink = false;
     downloadUrl: string;
 
     constructor() { }
@@ -27,6 +28,7 @@ export class DataOutputComponent implements OnInit {
 
     makeQrCode() {
         const self = this;
+
         this.jsonResult = this.jsonOutputData.replace(/\s/g, '');
 
         this.qrCode.nativeElement.innerHTML = '';
@@ -40,7 +42,17 @@ export class DataOutputComponent implements OnInit {
             correctLevel: QRCode.CorrectLevel.L
         });
 
-        this.generatedCode = true;
+        if (this.generatedCode) {
+            this.generatedCode = false;
+            setTimeout(() => {
+                this.generatedCode = true;
+            }, 300);
+        } else {
+            this.generatedCode = true;
+        }
+
+        this.generatedLink = false;
+
     }
 
     downloadImage() {
@@ -50,6 +62,7 @@ export class DataOutputComponent implements OnInit {
 
         this.downloadLink.nativeElement.download = 'qr-code-' + this.jsonRaw.chapterUrl;
         this.downloadUrl = window.URL.createObjectURL(blob);
+        this.generatedLink = true;
     }
 
     b64toBlob(b64Data, contentType, sliceSize) {

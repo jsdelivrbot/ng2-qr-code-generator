@@ -2,7 +2,7 @@
     <button (click)="makeQrCode()">Make qr code</button>
     <button *ngIf="generatedCode" (click)="downloadImage()">Generate download</button>
 
-    <a [href]="downloadUrl | urlSanitizer" #downloadLink>download here</a>
+    <a [hidden]="!generatedLink" [href]="downloadUrl | urlSanitizer" #downloadLink>download here</a>
 
     <div #qrCode id="qrcode"></div>
 </div>
