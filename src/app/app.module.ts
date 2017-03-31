@@ -8,12 +8,14 @@ import { DataInputComponent } from './data-input/data-input.component';
 import { DataOutputComponent } from './data-output/data-output.component';
 
 import { ColorPickerModule } from 'angular2-color-picker';
+import { UrlSanitizerPipe } from './url-sanatizer.pipe';
 
 @NgModule({
     declarations: [
         AppComponent,
         DataInputComponent,
-        DataOutputComponent
+        DataOutputComponent,
+        UrlSanitizerPipe
     ],
     imports: [
         BrowserModule,

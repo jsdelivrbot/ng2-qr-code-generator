@@ -1,4 +1,8 @@
 <div class="json-result__container">
-    <button type="" (click)="makeQrCode()">Make qr code</button>
+    <button (click)="makeQrCode()">Make qr code</button>
+    <button *ngIf="generatedCode" (click)="downloadImage()">Generate download</button>
+
+    <a [href]="downloadUrl | urlSanitizer" #downloadLink>download here</a>
+
     <div #qrCode id="qrcode"></div>
 </div>
