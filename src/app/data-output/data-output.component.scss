@@ -1,8 +1,27 @@
 #qrcode {
     padding: 20px;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
 
-    canvas {
-        padding: 20px;
-    }
+.json-result__container {
+    margin-top: 50px;
+}
+
+.btn-container {
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.link-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px auto 20px;
+    box-sizing: border-box;
 }

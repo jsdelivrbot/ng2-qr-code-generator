@@ -1,27 +1,27 @@
 <div class="data__container">
     <div class="data-input__container">
         <div class="data-input__wrapper">
-            <label for="chapterUrl">Chapter url:</label>
+            <label for="chapterUrl">Hoofdstuk url:</label>
             <input type="text" name="chapterUrl" [(ngModel)]="jsonInputData.chapterUrl" (keyup)="updateOutput()">
         </div>
 
         <div class="data-input__wrapper">
-            <label for="chapterUuid">Chapter uuid:</label>
+            <label for="chapterUuid">Hoofdstuk uuid:</label>
             <input type="text" name="chapterUuid" [(ngModel)]="jsonInputData.chapterUuid" (keyup)="updateOutput()">
         </div>
 
         <div class="data-input__wrapper">
-            <label for="themeCode">Theme code:</label>
+            <label for="themeCode">Thema code:</label>
             <input type="text" name="themeCode" [(ngModel)]="jsonInputData.themeCode" (keyup)="updateOutput()">
         </div>
 
-        <div>
-            <label for="isChapter">Is chapter?</label>
-            <input type="checkbox" name="isChapter" checked [(ngModel)]="jsonInputData.isChapter" (change)="updateOutput()">
+        <div class="data-input-checkbox__wrapper">
+            <label for="isChapter">Is hoofdstuk: </label>
+            <input type="checkbox" name="isChapter" checked [(ngModel)]="jsonInputData.isChapter" (change)="updateOutput()"> {{ jsonInputData.isChapter }}
         </div>
 
-        <div>
-            <label for="color">Kleur qr code</label>
+        <div class="data-input-colorpicker__wrapper">
+            <label for="color">Kleur QR-code:</label>
             <input id="color" name="color" [(colorPicker)]="color" [style.background]="color" [value]="color" />
         </div>
 
